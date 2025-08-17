@@ -10,7 +10,7 @@ const AddJob = () => {
         company: '',
         title: '',
         status: 'Applied',
-        appliedDate: new Date().toISOString().split('T')[0], // Default to today
+        appliedDate: new Date().toISOString().split('T')[0],
         notes: ''
     });
     const [errors, setErrors] = useState({});
@@ -19,7 +19,6 @@ const AddJob = () => {
         const { name, value } = e.target;
         setFormData(prev => ({ ...prev, [name]: value }));
 
-        // Clear error when user makes changes
         if (errors[name]) {
             setErrors(prev => ({ ...prev, [name]: '' }));
         }
